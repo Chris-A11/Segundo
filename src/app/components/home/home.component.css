@@ -1,0 +1,15 @@
+.btn{
+    width: 40%;
+    border: 0px;
+    margin: 30px;
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+}
+
+.img-fluid {
+    height: 70%;
+    width: 70%;
+}
