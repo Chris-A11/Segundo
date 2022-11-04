@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://autenticar.etb.net.co" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://autenticar.etb.net.co" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://autenticar.etb.net.co">
+      <s:element name="ObtenerDatos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDatosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ObtenerDatosResult" type="tns:InfoUsuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InfoUsuario">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="apellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre_plan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="franja" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vel_max" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vel_min" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pool" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="access_password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="espacioCorreo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="espacioPWP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cantidadCuentas" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="displayname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="reglasBURL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="claveAcceso" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenerDatosETB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDatosETBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ObtenerDatosETBResult" type="tns:InfoUsuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DatosComplementoUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DatosComplementoUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DatosComplementoUsuarioResult" type="tns:DatosComplemento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DatosComplemento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="genero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fch_nacimiento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="etb_Plan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="grupo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bdCorreo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RestaurarClave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RestaurarClaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RestaurarClaveResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RestauraClaveConexion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RestauraClaveConexionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RestauraClaveConexionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidaUsuarioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthADETB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthADETBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AuthADETBResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindADETB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindADETBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FindADETBResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FechaCreacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FechaCreacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaCreacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreaUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pregunta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Respuesta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Plan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="genero" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha_nacimiento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellido" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreaUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreaUsuarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CambiaPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PasswordActual" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PasswordNuevo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CambiaPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CambiaPasswordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="displayname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fch_nacimiento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="genero" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModificarUsuarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RestaurarParametro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="parametro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="valor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RestaurarParametroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RestaurarParametroResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarParametro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="parametro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarParametroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarParametroResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarParametroETB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="parametro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarParametroETBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarParametroETBResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarCuentas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarCuentasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarCuentasResult" type="tns:ArrayOfTuplaCuenta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTuplaCuenta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="tuplaCuenta" type="tns:tuplaCuenta" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="tuplaCuenta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="loginHija" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="capacidad" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="HistorialUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HistorialUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HistorialUsuarioResult" type="tns:ArrayOfTuplaHistorial" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTuplaHistorial">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="tuplaHistorial" type="tns:tuplaHistorial" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="tuplaHistorial">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="novedad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="plansgs" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre_plan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="usuario_pu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="detalle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ObtenerDatosSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerDatos" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDatosSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerDatosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDatosETBSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerDatosETB" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDatosETBSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerDatosETBResponse" />
+  </wsdl:message>
+  <wsdl:message name="DatosComplementoUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:DatosComplementoUsuario" />
+  </wsdl:message>
+  <wsdl:message name="DatosComplementoUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:DatosComplementoUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="RestaurarClaveSoapIn">
+    <wsdl:part name="parameters" element="tns:RestaurarClave" />
+  </wsdl:message>
+  <wsdl:message name="RestaurarClaveSoapOut">
+    <wsdl:part name="parameters" element="tns:RestaurarClaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="RestauraClaveConexionSoapIn">
+    <wsdl:part name="parameters" element="tns:RestauraClaveConexion" />
+  </wsdl:message>
+  <wsdl:message name="RestauraClaveConexionSoapOut">
+    <wsdl:part name="parameters" element="tns:RestauraClaveConexionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidaUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ValidaUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthADETBSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthADETB" />
+  </wsdl:message>
+  <wsdl:message name="AuthADETBSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthADETBResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindADETBSoapIn">
+    <wsdl:part name="parameters" element="tns:FindADETB" />
+  </wsdl:message>
+  <wsdl:message name="FindADETBSoapOut">
+    <wsdl:part name="parameters" element="tns:FindADETBResponse" />
+  </wsdl:message>
+  <wsdl:message name="FechaCreacionSoapIn">
+    <wsdl:part name="parameters" element="tns:FechaCreacion" />
+  </wsdl:message>
+  <wsdl:message name="FechaCreacionSoapOut">
+    <wsdl:part name="parameters" element="tns:FechaCreacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreaUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:CreaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="CreaUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:CreaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="CambiaPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:CambiaPassword" />
+  </wsdl:message>
+  <wsdl:message name="CambiaPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:CambiaPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModificarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ModificarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ModificarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ModificarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="RestaurarParametroSoapIn">
+    <wsdl:part name="parameters" element="tns:RestaurarParametro" />
+  </wsdl:message>
+  <wsdl:message name="RestaurarParametroSoapOut">
+    <wsdl:part name="parameters" element="tns:RestaurarParametroResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarParametroSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarParametro" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarParametroSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarParametroResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarParametroETBSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarParametroETB" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarParametroETBSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarParametroETBResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCuentasSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarCuentas" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCuentasSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarCuentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="HistorialUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:HistorialUsuario" />
+  </wsdl:message>
+  <wsdl:message name="HistorialUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:HistorialUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ConsultaSoap">
+    <wsdl:operation name="ObtenerDatos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Dado un login se devuelve la informacion.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerDatosSoapIn" />
+      <wsdl:output message="tns:ObtenerDatosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosETB">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Dado un login se devuelve la informacion de una cuenta ETB.COM.CO.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerDatosETBSoapIn" />
+      <wsdl:output message="tns:ObtenerDatosETBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DatosComplementoUsuario">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Dado un login, retorna los datos complementarios</wsdl:documentation>
+      <wsdl:input message="tns:DatosComplementoUsuarioSoapIn" />
+      <wsdl:output message="tns:DatosComplementoUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RestaurarClave">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Dado un login se resetea y entrega la nueva clave de servicios.</wsdl:documentation>
+      <wsdl:input message="tns:RestaurarClaveSoapIn" />
+      <wsdl:output message="tns:RestaurarClaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RestauraClaveConexion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Dado un login se resetea y entrega la nueva clave de conexion.</wsdl:documentation>
+      <wsdl:input message="tns:RestauraClaveConexionSoapIn" />
+      <wsdl:output message="tns:RestauraClaveConexionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaUsuario">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Dado un login y una clave valida el ingreso de un usuario.</wsdl:documentation>
+      <wsdl:input message="tns:ValidaUsuarioSoapIn" />
+      <wsdl:output message="tns:ValidaUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthADETB">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Dado un login y una clave valida el ingreso de un usuario contra el Directorio Corporativo.</wsdl:documentation>
+      <wsdl:input message="tns:AuthADETBSoapIn" />
+      <wsdl:output message="tns:AuthADETBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindADETB">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar usuarios en el AD ETB.</wsdl:documentation>
+      <wsdl:input message="tns:FindADETBSoapIn" />
+      <wsdl:output message="tns:FindADETBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FechaCreacion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Dado un login se retorna la fecha de creación.</wsdl:documentation>
+      <wsdl:input message="tns:FechaCreacionSoapIn" />
+      <wsdl:output message="tns:FechaCreacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreaUsuario">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Crea un usuario pasandole usuario, clave, pregunta para recordar la clave, respuesta a la pregunta de recordacion, Plan que deve venir vacio, , genero (H o M), fecha nacimiento(YYYYMMDD, email, nombre, apellido .</wsdl:documentation>
+      <wsdl:input message="tns:CreaUsuarioSoapIn" />
+      <wsdl:output message="tns:CreaUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CambiaPassword">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Dado un login,un password actual y un password nuevo cambia el password.</wsdl:documentation>
+      <wsdl:input message="tns:CambiaPasswordSoapIn" />
+      <wsdl:output message="tns:CambiaPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarUsuario">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Dado un login, nombre, apellido, displayname,fecha nacimiento(formato YYYY-MM-DD), email y genero actualiza estos datos.</wsdl:documentation>
+      <wsdl:input message="tns:ModificarUsuarioSoapIn" />
+      <wsdl:output message="tns:ModificarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RestaurarParametro">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Dado un login, un parametro y un valor, actualiza este parametro.</wsdl:documentation>
+      <wsdl:input message="tns:RestaurarParametroSoapIn" />
+      <wsdl:output message="tns:RestaurarParametroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarParametro">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Dado un login y un parametro retorna el valor del parametro.</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarParametroSoapIn" />
+      <wsdl:output message="tns:ConsultarParametroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarParametroETB">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Dado un login y un parametro retorna el valor del parametro del Directorio Corporativo.</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarParametroETBSoapIn" />
+      <wsdl:output message="tns:ConsultarParametroETBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCuentas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Dado un login, devuelve tuplas de cuentas hijas, capacidad .</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarCuentasSoapIn" />
+      <wsdl:output message="tns:ConsultarCuentasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HistorialUsuario">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Dado un login, devuelve tuplas de cuentas hijas, capacidad .</wsdl:documentation>
+      <wsdl:input message="tns:HistorialUsuarioSoapIn" />
+      <wsdl:output message="tns:HistorialUsuarioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConsultaSoap" type="tns:ConsultaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerDatos">
+      <soap:operation soapAction="http://autenticar.etb.net.co/ObtenerDatos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosETB">
+      <soap:operation soapAction="http://autenticar.etb.net.co/ObtenerDatosETB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DatosComplementoUsuario">
+      <soap:operation soapAction="http://autenticar.etb.net.co/DatosComplementoUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestaurarClave">
+      <soap:operation soapAction="http://autenticar.etb.net.co/RestaurarClave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestauraClaveConexion">
+      <soap:operation soapAction="http://autenticar.etb.net.co/RestauraClaveConexion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaUsuario">
+      <soap:operation soapAction="http://autenticar.etb.net.co/ValidaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthADETB">
+      <soap:operation soapAction="http://autenticar.etb.net.co/AuthADETB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindADETB">
+      <soap:operation soapAction="http://autenticar.etb.net.co/FindADETB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FechaCreacion">
+      <soap:operation soapAction="http://autenticar.etb.net.co/FechaCreacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreaUsuario">
+      <soap:operation soapAction="http://autenticar.etb.net.co/CreaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CambiaPassword">
+      <soap:operation soapAction="http://autenticar.etb.net.co/CambiaPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarUsuario">
+      <soap:operation soapAction="http://autenticar.etb.net.co/ModificarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestaurarParametro">
+      <soap:operation soapAction="http://autenticar.etb.net.co/RestaurarParametro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarParametro">
+      <soap:operation soapAction="http://autenticar.etb.net.co/ConsultarParametro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarParametroETB">
+      <soap:operation soapAction="http://autenticar.etb.net.co/ConsultarParametroETB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCuentas">
+      <soap:operation soapAction="http://autenticar.etb.net.co/ConsultarCuentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HistorialUsuario">
+      <soap:operation soapAction="http://autenticar.etb.net.co/HistorialUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConsultaSoap12" type="tns:ConsultaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerDatos">
+      <soap12:operation soapAction="http://autenticar.etb.net.co/ObtenerDatos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosETB">
+      <soap12:operation soapAction="http://autenticar.etb.net.co/ObtenerDatosETB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DatosComplementoUsuario">
+      <soap12:operation soapAction="http://autenticar.etb.net.co/DatosComplementoUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestaurarClave">
+      <soap12:operation soapAction="http://autenticar.etb.net.co/RestaurarClave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestauraClaveConexion">
+      <soap12:operation soapAction="http://autenticar.etb.net.co/RestauraClaveConexion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaUsuario">
+      <soap12:operation soapAction="http://autenticar.etb.net.co/ValidaUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthADETB">
+      <soap12:operation soapAction="http://autenticar.etb.net.co/AuthADETB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindADETB">
+      <soap12:operation soapAction="http://autenticar.etb.net.co/FindADETB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FechaCreacion">
+      <soap12:operation soapAction="http://autenticar.etb.net.co/FechaCreacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreaUsuario">
+      <soap12:operation soapAction="http://autenticar.etb.net.co/CreaUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CambiaPassword">
+      <soap12:operation soapAction="http://autenticar.etb.net.co/CambiaPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarUsuario">
+      <soap12:operation soapAction="http://autenticar.etb.net.co/ModificarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestaurarParametro">
+      <soap12:operation soapAction="http://autenticar.etb.net.co/RestaurarParametro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarParametro">
+      <soap12:operation soapAction="http://autenticar.etb.net.co/ConsultarParametro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarParametroETB">
+      <soap12:operation soapAction="http://autenticar.etb.net.co/ConsultarParametroETB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCuentas">
+      <soap12:operation soapAction="http://autenticar.etb.net.co/ConsultarCuentas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HistorialUsuario">
+      <soap12:operation soapAction="http://autenticar.etb.net.co/HistorialUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Consulta">
+    <wsdl:port name="ConsultaSoap" binding="tns:ConsultaSoap">
+      <soap:address location="http://autenticar.etb.net.co/consulta.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConsultaSoap12" binding="tns:ConsultaSoap12">
+      <soap12:address location="http://autenticar.etb.net.co/consulta.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
