@@ -1,0 +1,17 @@
+.img-fluid { 
+    height: 50px; 
+    width: 50px; 
+} 
+
+ .form-control, .btn { 
+    min-height: 3.2rem; 
+    line-height: initial; 
+} 
+
+.btn{
+    background-color: #214780;
+}
+
+.btn:hover{
+    background-color: #ff5c39;
+}

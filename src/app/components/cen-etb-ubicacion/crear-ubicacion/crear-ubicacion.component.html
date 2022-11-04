@@ -1,0 +1,32 @@
+<div class="contenido row g-0 justify-content-center pt-lg-5 pb-lg-5">
+    <div class="bg-light col-lg-8 d-flex flex-column align-items-center">
+      <div class="pt-lg-4 pb-lg-0 p-4 w-100 mb-auto">
+        <img src="https://etb.com/ResourcesCentrosExp/img/icons/logo_etb_azul.png" class="img-fluid">
+      </div>
+      <div class="px-lp-5 py-lg-4 p-5 w-100 align-self-center">
+        <h1 class="mb-4 w-100 text-center fw-bold">{{titulo}}</h1>          
+        <form>
+          <div class="row mb-5">
+            <label for="inputDelected" class="form-label fw-bold">Delected</label>
+            <input type="text" class="form-control" id="inputDelected" [(ngModel)]="UbiC.deleted" name="deleted" readonly>
+          </div>
+          <div class="row mb-5">
+            <label for="inputTipo" class="form-label fw-bold">Tipo</label>
+            <input type="text" class="form-control mb-2" id="inputTipo" [(ngModel)]="UbiC.tipo" name="tipo">
+          </div>
+          <div class="row mb-5">
+            <label for="inputUbicación" class="form-label fw-bold">Ubicación</label>
+            <input type="text" class="form-control" id="inputUbicación" [(ngModel)]="UbiC.ubicacion" name="ubicacion">
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12 text-center">
+              <button class="btn btn-light border border-dark border-2 m-2" role="button" (click)="create()">Agregar</button>
+              <button class="btn btn-light border border-dark border-2 m-2" role="button" (click)="volver()">Cancelar</button>
+            </div>
+      
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
